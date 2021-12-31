@@ -1,11 +1,19 @@
 defmodule WordCount do
   def split_phrase(phrase) do
     phrase
-    |> String.replace(~r"[\n:_!@#$%^&*:|,./;?()'’]", "")
-    |> String.downcase()
-    |> String.split(" ", trim: true)
-    |> List.delete("")
+    |> format_and_split_phrase()
     |> expand_list([])
+  end
+
+  def format_and_split_phrase(phrase) do
+    phrase
+    |> String.replace(
+      ["\n", "”", "“", "!", "’", "?", "(", ")", "\"", "_", "'", "=", "[", "]"],
+      ""
+    )
+    |> String.downcase()
+    |> String.split([" ", ",", ", ", ".", ". ", ":", ": ", ";", "; "], trim: true)
+    |> List.delete("")
   end
 
   def expand_list([_head, _tail], accumulator) do
