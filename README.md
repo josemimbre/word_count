@@ -46,8 +46,8 @@ Usage
 -----
 
 ```sh
-./word_count file_to_read
-cat file_to_read | ./word_count
+./bin/word_count file_to_read
+cat file_to_read | ./bin/word_count
 ```
 
 Testing
