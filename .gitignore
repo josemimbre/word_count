@@ -10,4 +10,3 @@ erl_crash.dump
 .elixir_ls/
 word_count-*.tar
 /tmp/
-word_count

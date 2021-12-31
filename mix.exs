@@ -13,7 +13,8 @@ defmodule WordCount.MixProject do
   end
 
   def escript do
-    [main_module: WordCount.CLI]
+    [main_module: WordCount.CLI,
+    path: "bin/word_count"]
   end
 
   # Run "mix help compile.app" to learn about applications.
