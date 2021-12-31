@@ -45,8 +45,15 @@ mix escript.build
 Usage
 -----
 
+The program can be run in two ways:
+
+### With args
 ```sh
 ./bin/word_count file_to_read
+```
+
+### With stdin content
+```sh
 cat file_to_read | ./bin/word_count
 ```
 
