@@ -1,12 +1,24 @@
 defmodule WordCountTest do
   use ExUnit.Case, async: true
+  import ExUnit.CaptureIO
+  doctest WordCount
 
-  test "list expand with more than 3 elements" do
-    list = WordCount.expand_list(["1", "2", "3", "4", "5", "6"], [])
-    assert Enum.member?(list, "1 2 3")
-    assert Enum.member?(list, "2 3 4")
-    assert Enum.member?(list, "3 4 5")
-    assert Enum.member?(list, "4 5 6")
+  setup do
+    {:ok, pid_simple} = "a b c\na b c\n" |> StringIO.open()
+    {:ok, pid_complex1} = "can’t can’t can’t\nwon't wont' won't\n" |> StringIO.open()
+
+    %{
+      stream_simple: IO.binstream(pid_simple, :line),
+      stream_complex1: IO.binstream(pid_complex1, :line)
+    }
+  end
+
+  test "process a simple string", %{stream_simple: stream, stream_complex1: _} do
+    assert capture_io(fn -> WordCount.process_streams([stream]) end) == "a b c - 2\n"
+  end
+
+  test "process a complex string", %{stream_simple: _, stream_complex1: stream} do
+    assert capture_io(fn -> WordCount.process_streams([stream]) end) == "wont wont wont - 1\ncant cant cant - 1\n"
   end
 
   test "list expand with 2 elements" do

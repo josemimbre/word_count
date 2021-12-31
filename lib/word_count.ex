@@ -34,6 +34,15 @@ defmodule WordCount do
     |> List.delete("")
   end
 
+  @doc ~S"""
+  Expands a list of strings into a group of 3 strings.
+
+  ## Examples
+
+      iex> WordCount.expand_list(["1", "2", "3", "4", "5", "6"],[])
+      ["4 5 6", "3 4 5", "2 3 4", "1 2 3"]
+
+  """
   def expand_list([_head, _tail], accumulator) do
     accumulator
   end
