@@ -18,7 +18,8 @@ defmodule WordCountTest do
   end
 
   test "process a complex string", %{stream_simple: _, stream_complex1: stream} do
-    assert capture_io(fn -> WordCount.process_streams([stream]) end) == "wont wont wont - 1\ncant cant cant - 1\n"
+    assert capture_io(fn -> WordCount.process_streams([stream]) end) ==
+             "wont wont wont - 1\ncant cant cant - 1\n"
   end
 
   test "list expand with 2 elements" do
