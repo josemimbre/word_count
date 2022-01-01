@@ -49,7 +49,7 @@ The program can be run in two ways:
 
 ### With args
 ```sh
-./bin/word_count file_to_read
+./bin/word_count file_1.txt file_2.txt
 ```
 
 ### With stdin content
@@ -63,4 +63,8 @@ Testing
 ```sh
 $ mix test
 ```
-## To Dos
+## To Do
+
+* [All Issues](https://github.com/josemimbre/word_count/issues)
+* [Enhancements](https://github.com/josemimbre/word_count/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+* [Bugs](https://github.com/josemimbre/word_count/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
