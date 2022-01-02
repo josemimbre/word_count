@@ -36,9 +36,15 @@ cd word_count
 ```
 
 ### Step 2: Get dependencies and build the escript
+
 ```sh
 mix deps.get
 mix escript.build
+```
+#### With docker
+
+```sh
+docker build . -t word_count
 ```
 
 Usage
@@ -54,6 +60,11 @@ The program can be run in two ways:
 ### With stdin content
 ```sh
 cat file_to_read | ./bin/word_count
+```
+
+### With docker
+```sh
+docker run -it --read-only -v files_path:/app/files word_count files/file_1.txt
 ```
 
 Testing
