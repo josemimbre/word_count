@@ -41,7 +41,7 @@ cd word_count
 mix deps.get
 mix escript.build
 ```
-#### With docker
+### With docker
 
 ```sh
 docker build . -t word_count
@@ -50,7 +50,7 @@ docker build . -t word_count
 Usage
 -----
 
-The program can be run in two ways:
+The program can be run in three ways:
 
 ### With args
 ```sh
@@ -70,12 +70,16 @@ docker run -it --read-only -v files_path:/app/files word_count files/file_1.txt
 Testing
 -----
 
+To run the test of the program you need to run:
+
 ```sh
 $ mix test
 ```
 
 To Do
 -----
+
+For a list of the future improvements that the program will have we have created a list of issues and bugs to keep track of those developments
 
 * [All Issues](https://github.com/josemimbre/word_count/issues)
 * [Enhancements](https://github.com/josemimbre/word_count/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
