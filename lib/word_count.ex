@@ -12,6 +12,7 @@ defmodule WordCount do
       |> Enum.sort(fn {_key1, value1}, {_key2, value2} -> value1 > value2 end)
 
     Enum.take(result, 100)
+    |> Enum.sort(fn {key1, _value1}, {key2, _value2} -> key1 > key2 end)
     |> Enum.map(fn {phrase, number} -> IO.puts(phrase <> " - " <> to_string(number)) end)
 
     # File.write!('result.txt', inspect(result, pretty: true, limit: :infinity))

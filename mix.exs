@@ -27,7 +27,8 @@ defmodule WordCount.MixProject do
   defp deps do
     [
       {:flow, "~> 1.0"},
-      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:stream_data, "~> 0.5", only: :test}
     ]
   end
 end
