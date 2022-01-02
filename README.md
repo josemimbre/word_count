@@ -13,9 +13,8 @@ Table of Contents
   * [Requirements](#requirements)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contributing](#contributing)
-  * [Support and Migration](#support-and-migration)
-  * [License](#license)
+  * [Testing](#testing)
+  * [To Do](#to-do)
 
 Requirements
 ------------
@@ -63,7 +62,9 @@ Testing
 ```sh
 $ mix test
 ```
-## To Do
+
+To Do
+-----
 
 * [All Issues](https://github.com/josemimbre/word_count/issues)
 * [Enhancements](https://github.com/josemimbre/word_count/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
